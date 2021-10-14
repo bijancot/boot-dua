@@ -1,50 +1,35 @@
-<div class="container">
+<div class="main">
 
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
+    <!-- Sign in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="<?= base_url('assets/'); ?>images/login.png" alt="sing up image"></figure>
+                    <a href="<?= base_url('auth/registration'); ?>" class="signup-image-link">Create an account</a>
+                </div>
 
-        <div class="col-lg-5">
-
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Login KETOKO</h1>
-                                </div>
-
-                                <?= $this->session->flashdata('message'); ?>
-
-                                <form class="user" method="POST" action="<?= base_url('auth'); ?>">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" value="<?= set_value('email'); ?>" id="email" name="email" placeholder="Enter Email Address...">
-                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                                        <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </button>
-                                </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="<?= base_url('auth/registration'); ?>">Create an Account!</a>
-                                </div>
-                            </div>
+                <div class="signin-form">
+                    <h2 class="form-title">Login | KETOKO</h2>
+                    <?= $this->session->flashdata('message'); ?>
+                    <form method="post" class="register-form" id="login-form" action="<?= base_url('auth'); ?>">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="email" id="email" placeholder="Email" value="<?= set_value('email'); ?>" />
+                            <?= form_error('email', '<small>', '</small>'); ?>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password" />
+                            <?= form_error('password', '<small>', '</small>'); ?>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        </div>
+                    </form>
                 </div>
             </div>
-
         </div>
-
-    </div>
+    </section>
 
 </div>

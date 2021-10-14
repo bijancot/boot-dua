@@ -1,47 +1,42 @@
-<div class="container">
+<div class="main">
 
-    <div class="card o-hidden border-0 shadow-lg my-5 col-lg-5 mx-auto">
-        <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-                <div class="col-lg">
-                    <div class="p-5">
-                        <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Register</h2>
+                    <form method="POST" action="<?= base_url('auth/registration') ?>" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="name" id="name" placeholder="Full Name" value="<?= set_value('name'); ?>" />
+                            <?= form_error('name', '<small>', '</small>'); ?>
                         </div>
-                        <form class="user" method="POST" action="<?= base_url('auth/registration'); ?>">
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" value="<?= set_value('name'); ?>" id="name" name="name" placeholder="Full Name">
-                                <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" value="<?= set_value('email'); ?>" id="email" name="email" placeholder="Email Address">
-                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Password">
-                                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Repeat Password">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">
-                                Register Account
-                            </button>
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">Forgot Password?</a>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="text" name="email" id="email" placeholder="Your Email" value="<?= set_value('email'); ?>" />
+                            <?= form_error('email', '<small>', '</small>'); ?>
                         </div>
-                        <div class="text-center">
-                            <a class="small" href="<?= base_url('auth'); ?>">Already have an account? Login!</a>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="password1" id="password1" placeholder="Password" />
+                            <?= form_error('password1', '<small>', '</small>'); ?>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                            <input type="password" name="password2" id="password2" placeholder="Repeat password" />
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="<?= base_url('assets/'); ?>images/regis.png" alt="sing up image"></figure>
+                    <a href="<?= base_url('auth'); ?>" class="signup-image-link">I am already member</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 </div>
