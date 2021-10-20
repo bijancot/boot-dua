@@ -17,6 +17,16 @@
         Admin
     </div>
 
+    <!-- Nav Item - Profile -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('user'); ?>">
+            <i class="fas fa-fw fa-user-tie"></i>
+            <span>My Profile</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('user/barang'); ?>">
@@ -25,18 +35,13 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        User
-    </div>
-
-    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Transaksi -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('user'); ?>">
-            <i class="fas fa-fw fa-user-tie"></i>
-            <span>My Profile</span></a>
+        <a class="nav-link" href="<?= base_url('transaksi'); ?>">
+            <i class="fas fa-fw fa-cash-register"></i>
+            <span>Transaksi</span></a>
     </li>
 
     <!-- Divider -->
